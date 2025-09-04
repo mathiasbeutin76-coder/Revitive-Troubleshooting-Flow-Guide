@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revitive Troubleshooting Flow (Master Guide)</title>
+<style>
+  :root {
+    --bg:#0b1220; --card:#111a2b; --ink:#e6eefc; --muted:#a9b5cc; --accent:#7aa2ff; --line:#1f2a44;
+  }
+  html,body {background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; margin:0; padding:0;}
+  .container {max-width:1000px; margin:40px auto; padding:0 16px;}
+  h1 {font-size: clamp(1.6rem, 2.5vw, 2rem); margin:0 0 6px 0;}
+  .sub {color:var(--muted); margin-bottom:18px;}
+  .toolbar {display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px}
+  .btn {background:var(--card); color:var(--ink); border:1px solid var(--line); padding:10px 12px; border-radius:12px; cursor:pointer; font-weight:600;}
+  .btn:hover {border-color:var(--accent);}
+  .panel {background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin:12px 0;}
+  .panel summary {list-style:none; padding:16px 18px; cursor:pointer; display:flex; align-items:center; gap:10px; font-weight:700; border-bottom:1px solid var(--line);}
+  .panel summary::-webkit-details-marker {display:none;}
+  .panel .content {padding:16px 18px; color:var(--ink);}
+  .panel .content ul {margin:0 0 0 20px;}
+  .panel .content a {color:var(--accent); text-decoration:none;}
+  .panel .content a:hover {text-decoration:underline;}
+  .callout {border:1px dashed var(--line); padding:10px 12px; border-radius:12px; margin:10px 0;}
+  .jump {display:flex; flex-wrap:wrap; gap:8px; margin: 8px 0 16px;}
+  .chip {background:transparent; border:1px solid var(--line); color:var(--ink); padding:6px 10px; border-radius:999px; text-decoration:none; font-size:14px;}
+  .chip:hover {border-color:var(--accent);}
+  .footer {color:var(--muted); font-size:13px; margin-top:16px;}
+  @media print {
+    body {background:white; color:black;}
+    .btn, .jump {display:none !important;}
+    .panel {break-inside: avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>✅ Revitive Troubleshooting Flow (Master Guide)</h1>
+  <div class="sub">Customer‑friendly, collapsible checklist • Last updated: 04 September 2025</div>
+  <div class="toolbar">
+    <button class="btn" onclick="expandAll()">Expand all</button>
+    <button class="btn" onclick="collapseAll()">Collapse all</button>
+    <button class="btn" onclick="window.print()">Print / Save PDF</button>
+    <button class="btn" onclick="downloadMD()">Download Markdown</button>
+    <button class="btn" onclick="downloadTXT()">Download Text</button>
+  </div>
+  <div class="jump">
+    <a class="chip" href="#power-charging">Power & Charging</a>
+    <a class="chip" href="#cuts-out">Device Cuts Out / Resets</a>
+    <a class="chip" href="#weak-no-stim">Weak or No Stimulation</a>
+    <a class="chip" href="#pads-knee">Pads & Knee Programs</a>
+    <a class="chip" href="#wires-connectors">Wires / Connectors</a>
+    <a class="chip" href="#app-bt">App / Bluetooth</a>
+    <a class="chip" href="#hardware">Hardware Issues</a>
+    <a class="chip" href="#key-links">Key Links</a>
+  </div>
+
+  <details class="panel" id="power-charging">
+    <summary><span>▶</span> <span>1. 🔋 Power & Charging</span></summary>
+    <div class="content"><ul>
+<li><strong>Q1: Does the device turn on?</strong></li>
+<li><em>Yes, but only when plugged in</em> → Battery not holding charge → <strong>Repair</strong>.</li>
+<li><em>No, doesn’t turn on at all</em> → Remove transport magnet → Check AC adaptor &amp; socket → Try replacement adaptor → Still no power → <strong>Repair (PCB fault)</strong>.</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="cuts-out">
+    <summary><span>▶</span> <span>2. ⚡ Device Cuts Out / Resets</span></summary>
+    <div class="content"><ul>
+<li>Resets or timer back to 00 → <strong>Repair (faulty adaptor jack PCB)</strong>.</li>
+<li>Ensure not confusing with <strong>Auto‑Pause</strong> (stuck at intensity 3–4, flashing/beeping).</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="weak-no-stim">
+    <summary><span>▶</span> <span>3. 👣 Weak or No Stimulation</span></summary>
+    <div class="content"><ul>
+<li>Hydration: drink water before/after use.</li>
+<li>Moisturise soles (wait until absorbed).</li>
+<li>Clean footpads with a damp (not wet) cloth.</li>
+<li>Ensure both bare feet flat before switching on.</li>
+<li><strong>Hand Test</strong>: hand across pads, increase intensity slowly.<br>
+&nbsp;&nbsp;• <em>Tingling</em> = Device OK.<br>
+&nbsp;&nbsp;• <em>No tingling</em> = <strong>Repair</strong>.</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="pads-knee">
+    <summary><span>▶</span> <span>4. 🦵 Pads & Knee Programs</span></summary>
+    <div class="content"><ul>
+<li><strong>Knee Programs</strong>: Intensity can only be set during stimulation, not during rest (normal).</li>
+<li><strong>Body/Knee pads not working</strong>:
+  <ul>
+    <li>Check placement (per IFU), skin clean/dry/no oils or excess hair.</li>
+    <li>Confirm wires fully connected; EMS/TENS symbol showing.</li>
+    <li>If symbol missing → try new wires.</li>
+    <li>Still not working → <strong>Jack PCB fault → Repair</strong>.</li>
+  </ul>
+</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="wires-connectors">
+    <summary><span>▶</span> <span>5. 🔌 Wires / Connectors</span></summary>
+    <div class="content"><ul>
+<li><strong>Pads shown as connected when not</strong> → dust/obstruction in jack → plug/unplug repeatedly → if still faulty → <strong>Repair</strong>.</li>
+<li><strong>Wires won’t fit</strong> → confirm correct insertion, gently wiggle → if still no fit → <strong>Repair</strong>.</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="app-bt">
+    <summary><span>▶</span> <span>6. 📱 App / Bluetooth (Medic Coach)</span></summary>
+    <div class="content"><ul>
+<li><strong>Connection setup</strong>:
+  <ol>
+    <li>Restart phone.</li>
+    <li>Remove Revitive from Bluetooth paired list.</li>
+    <li>Reset device (pin 10s until beep).</li>
+    <li>Pair via the app only.</li>
+    <li>Check BT symbol flashing → if not → <strong>BT fault → Repair</strong>.</li>
+  </ol>
+</li>
+<li><strong>Android issues (Samsung, Pixel, Huawei, etc.)</strong>:
+  <ul>
+    <li>Try another phone.</li>
+    <li>If it works elsewhere → offer replacement, exchange for Medic Knee, or refund.</li>
+  </ul>
+</li>
+<li><strong>App display issues</strong>: reduce font size / adjust screen resolution (2316×1080 or 3088×1440 works).</li>
+<li><strong>Verification link</strong>: open from the same device with the app installed; on Android, use Chrome.</li>
+<li><strong>App Store / Play Store Availability</strong>:
+  <ul>
+    <li>Revitive App currently available in: Germany, Austria, UK, Ireland, France, Netherlands, Belgium, Australia, New Zealand, and Luxembourg.</li>
+    <li>If you can’t find the app, you may need to change your App Store / Play Store region.</li>
+  </ul>
+  <div class="callout">
+    <strong>Google Play Store (Android)</strong>
+    <ol>
+      <li>Open Google Play Store.</li>
+      <li>Tap your profile picture &gt; <em>Settings</em>.</li>
+      <li>Go to <em>General &gt; Account and Device Preferences</em>.</li>
+      <li>Under <em>Country and Profiles</em>, select the new country (e.g. Germany).</li>
+      <li>Follow the prompts and add a payment method from that country.</li>
+      <li>Close the app and allow up to 48 hours for the change.</li>
+    </ol>
+    <strong>Apple App Store (iOS)</strong>
+    <ol>
+      <li>Open <em>Settings</em> on iPhone/iPad.</li>
+      <li>Tap your name &gt; <em>Media &amp; Purchases</em> &gt; <em>View Account</em>.</li>
+      <li>Select <em>Country/Region</em> &gt; <em>Change Country or Region</em>.</li>
+      <li>Choose Germany and accept the Terms &amp; Conditions.</li>
+      <li>Enter a German billing address and payment method (e.g. gift card or PayPal with German account).</li>
+      <li>Restart the device, then search for the Revitive app again.</li>
+    </ol>
+  </div>
+</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="hardware">
+    <summary><span>▶</span> <span>7. 🖥️ Hardware Issues</span></summary>
+    <div class="content"><ul>
+<li><strong>Footpads bubbling/inflated</strong> → often caused by creams with paraffin/mineral oil → advise Revitive cream only → <strong>Repair</strong>.</li>
+<li><strong>Display fading / sections not lit</strong> → faulty LED → obtain photo → <strong>Repair</strong>.</li>
+</ul></div>
+  </details>
+
+  <details class="panel" id="key-links">
+    <summary><span>▶</span> <span>8. 📚 Key Links for Customers</span></summary>
+    <div class="content"><ul>
+<li><a href="https://revitiveuk.zendesk.com/hc/en-gb/articles/12868004368916-What-is-the-Auto-Pause-function" target="_blank">Auto‑Pause explained</a></li>
+<li><a href="https://revitiveuk.zendesk.com/hc/en-gb/articles/9496536169620-Supercharge-your-Therapy" target="_blank">Supercharge Therapy Tips</a></li>
+<li><a href="https://revitiveuk.zendesk.com/hc/en-gb/sections/5397701863316-Medic-Coach-5575AQ" target="_blank">Medic Coach FAQ</a></li>
+<li><a href="https://revitiveuk.zendesk.com/hc/en-gb/articles/9495767370004-My-Medic-Coach-is-not-connecting" target="_blank">Medic Coach not connecting</a></li>
+<li><a href="https://revitiveuk.zendesk.com/hc/en-gb/articles/31858128006676-My-Medic-Coach-is-Not-Connecting-to-My-Android-Device" target="_blank">Android connection issues</a></li>
+</ul></div>
+  </details>
+
+  <div class="footer">© Revitive Support — Internal troubleshooting aide. For customer‑facing wording, adapt as needed.</div>
+</div>
+<script>
+function expandAll() { document.querySelectorAll('details').forEach(d=>d.open=true); }
+function collapseAll() { document.querySelectorAll('details').forEach(d=>d.open=false); }
+function download(filename, text) {
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+function buildMarkdown() {
+  let md = `# Revitive Troubleshooting Flow (Master Guide)\n\nCustomer‑friendly, collapsible checklist • Last updated: 04 September 2025\n\n`;
+  const panels = document.querySelectorAll('.panel');
+  panels.forEach((p, idx)=>{
+    const title = p.querySelector('summary span:nth-child(2)').innerText.replace(/^\d+\.\s*/, '');
+    const content = p.querySelector('.content').innerText.trim();
+    md += `## ${idx+1}. ${title}\n\n${content}\n\n`;
+  });
+  md += `\n\n© Revitive Support — Internal troubleshooting aide. For customer‑facing wording, adapt as needed.`;
+  return md;
+}
+function buildText() {
+  let txt = `Revitive Troubleshooting Flow (Master Guide)\nCustomer‑friendly, collapsible checklist • Last updated: 04 September 2025\n\n`;
+  const panels = document.querySelectorAll('.panel');
+  panels.forEach((p, idx)=>{
+    const title = p.querySelector('summary span:nth-child(2)').innerText;
+    const content = p.querySelector('.content').innerText.trim();
+    txt += `${title}\n${content}\n\n`;
+  });
+  return txt;
+}
+function downloadMD() { download('Revitive_Troubleshooting_Flow.md', buildMarkdown()); }
+function downloadTXT() { download('Revitive_Troubleshooting_Flow.txt', buildText()); }
+</script>
+</body>
+</html>
